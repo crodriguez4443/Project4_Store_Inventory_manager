@@ -121,13 +121,12 @@ def create_backup():
             csvwriter.writeheader()
 
             #iterate over backupdb_data and WRITING that value to the csv file
-            for item in backupdb_data:
+            ffor item in backupdb_data:
                 csvwriter.writerow({
-                    'product_id': item.product_id, 
                     'product_name': item.product_name,
-                    'product_price': item.product_price, 
+                    'product_price': f"${item.product_price}", 
                     'product_quantity': item.product_quantity, 
-                    'last_updated': item.date_updated.strftime('%Y-%m-%d')
+                    'date_updated': item.date_updated.strftime('%-m/%-d/%Y')
                     })
         print('backup successfully created!')
     except Exception as e:
