@@ -121,7 +121,7 @@ def create_backup():
             csvwriter.writeheader()
 
             #iterate over backupdb_data and WRITING that value to the csv file
-            ffor item in backupdb_data:
+            for item in backupdb_data:
                 csvwriter.writerow({
                     'product_name': item.product_name,
                     'product_price': f"${item.product_price}", 
